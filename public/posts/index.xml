@@ -6,13 +6,14 @@
     <description>Recent content in Posts on VIXVIZ</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 14 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
+      <title>Introducing VIXVIZ</title>
       <link>http://localhost:1313/posts/welcome/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/welcome/</guid>
-      <description>&lt;p&gt;title: &amp;ldquo;Introducing VIXVIZ&amp;rdquo;&#xA;date: 2025-05-14&#xA;draft: false&#xA;VIXVIZ offers historical VIX data, futures curves, and trading insights. Stay tuned for updates!&lt;/p&gt;</description>
+      <description>&lt;p&gt;VIXVIZ offers historical VIX data, futures curves, and trading insights. Stay tuned for updates!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
