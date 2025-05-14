@@ -1,0 +1,9 @@
+baseURL = "https://vixviz.com/"
+languageCode = "en-us"
+title = "VIXVIZ"
+theme = "ananke"
+[params]
+  slogan = "Visualize VIX, Master Volatility“
+
+
+
