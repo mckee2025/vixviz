@@ -5,5 +5,7 @@ theme = "ananke"
 [params]
   slogan = "Visualize VIX, Master Volatility“
 
-
-
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
