@@ -1,3 +1,4 @@
+"""
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import json
@@ -30,3 +31,31 @@ with open("static/data/vix-data.json", "w") as f:
     json.dump(formatted_data, f, ensure_ascii=False)
 
 print("数据已提取并保存到 static/data/vix-data.json")
+"""
+
+
+
+
+import os
+import json
+import pandas as pd
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+# 从环境变量加载凭据
+creds_json = os.getenv('GOOGLE_CREDENTIALS')
+if creds_json:
+    with open('credentials.json', 'w') as f:
+        f.write(creds_json)
+else:
+    raise ValueError("GOOGLE_CREDENTIALS environment variable not set")
+
+scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+creds = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
+client = gspread.authorize(creds)
+
+sheet = client.open('VIX_VX_Data').sheet1
+data = sheet.get_all_records()
+
+df = pd.DataFrame(data)
+df.to_json('static/data/vix-data.json', orient='records', indent=2)

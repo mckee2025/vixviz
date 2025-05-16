@@ -1,0 +1,44 @@
+name: Update VIX Data Daily
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天 UTC 00:00 运行（对应 HKT 08:00）
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 设置 Python 环境
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      # 安装依赖
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas gspread oauth2client
+
+      # 运行脚本（使用 GitHub Secrets 提供凭据）
+      - name: Run fetch_vix_data.py
+        env:
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+        run: |
+          echo "$GOOGLE_CREDENTIALS" > credentials.json
+          python fetch_vix_data.py
+
+      # 提交更改
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add static/data/vix-data.json
+          git commit -m "Update vix-data.json with latest data $(date +%Y-%m-%d)" || echo "No changes to commit"
+          git push
