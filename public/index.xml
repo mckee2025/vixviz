@@ -6,21 +6,21 @@
     <description>Recent content in Welcome to VIXVIZ on VIXVIZ</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>VIX and VX Futures Trends</title>
-      <link>http://localhost:1313/charts/</link>
-      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/charts/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Introducing VIXVIZ</title>
       <link>http://localhost:1313/posts/welcome/</link>
       <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/welcome/</guid>
       <description>&lt;p&gt;VIXVIZ offers historical VIX data, futures curves, and trading insights. Stay tuned for updates!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/charts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/charts/</guid>
+      <description>&lt;h2 id=&#34;draft-false&#34;&gt;title: &amp;ldquo;VIX and VX Futures Trends&amp;rdquo;&#xA;date: 2025-05-15&#xA;draft: false&lt;/h2&gt;</description>
     </item>
   </channel>
 </rss>
