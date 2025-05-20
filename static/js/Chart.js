@@ -82,36 +82,96 @@
          console.log('Traces:', traces);
 
          const layout = {
-           title: {
-             text: `VIX and VX Trends (${daysToShow} Days)`,
-             font: { size: window.innerWidth <= 768 ? 14 : 18 }
-           },
-           xaxis: {
-             title: 'Date',
-             type: 'date',
-             tickangle: window.innerWidth <= 768 ? 45 : 0,
-             tickfont: { size: window.innerWidth <= 768 ? 10 : 12 }
-           },
-           yaxis: {
-             title: 'Value',
-             tickfont: { size: window.innerWidth <= 768 ? 10 : 12 }
-           },
-           margin: {
-             t: window.innerWidth <= 768 ? 40 : 50,
-             b: window.innerWidth <= 768 ? 60 : 50,
-             l: 50,
-             r: 50
-           },
-           showlegend: true,
-           legend: {
-             orientation: window.innerWidth <= 768 ? 'h' : 'v',
-             x: 0,
-             y: -0.2
-           },
-           hovermode: 'x unified'
-         };
+          title: {
+    text: `VIX and VX Trends`,
+    font: { 
+      family: 'Poppins, sans-serif',
+      size: window.innerWidth <= 768 ? 18 : 24,
+      color: '#e2e8f0',
+      weight: 500
+    },
+    x: 0.5,
+    xanchor: 'center',
+    pad: { t: 20 }
+  },
+  xaxis: {
+    title: {
+      text: 'Date',
+      font: { 
+        family: 'Poppins, sans-serif',
+        size: window.innerWidth <= 768 ? 14 : 16,
+        color: '#e2e8f0'
+      }
+    },
+    type: 'date',
+    tickangle: window.innerWidth <= 768 ? 45 : 0,
+    tickfont: { 
+      size: window.innerWidth <= 768 ? 12 : 14,
+      color: '#94a3b8'
+    },
+    gridcolor: 'rgba(255, 255, 255, 0.1)',
+    linecolor: 'rgba(255, 255, 255, 0.2)',
+    zeroline: false
+  },
+  yaxis: {
+    title: {
+      text: 'Value',
+      font: { 
+        family: 'Poppins, sans-serif',
+        size: window.innerWidth <= 768 ? 14 : 16,
+        color: '#e2e8f0'
+      }
+    },
+    tickfont: { 
+      size: window.innerWidth <= 768 ? 12 : 14,
+      color: '#94a3b8'
+    },
+    gridcolor: 'rgba(255, 255, 255, 0.1)',
+    linecolor: 'rgba(255, 255, 255, 0.2)',
+    zeroline: false
+  },
+  margin: {
+    t: window.innerWidth <= 768 ? 60 : 80,
+    b: window.innerWidth <= 768 ? 80 : 70,
+    l: 60,
+    r: 60
+  },
+  showlegend: true,
+  legend: {
+    orientation: window.innerWidth <= 768 ? 'h' : 'v',
+    x: 0,
+    y: -0.25,
+    font: { 
+      family: 'Poppins, sans-serif',
+      size: 12,
+      color: '#e2e8f0'
+    },
+    bgcolor: 'rgba(255, 255, 255, 0.05)',
+    bordercolor: 'rgba(255, 255, 255, 0.2)',
+    borderwidth: 1
+  },
+  hovermode: 'x unified',
+  hoverlabel: {
+    bgcolor: 'rgba(255, 255, 255, 0.9)',
+    bordercolor: 'rgba(255, 255, 255, 0.2)',
+    font: { 
+      family: 'Poppins, sans-serif',
+      size: 12,
+      color: '#1e293b'
+    },
+    align: 'left'
+  },
+  paper_bgcolor: 'rgba(0,0,0,0)',
+  plot_bgcolor: 'rgba(0,0,0,0)',
+  transition: {
+    duration: 300,
+    easing: 'cubic-in-out'
+  },
+  displayModeBar: false // Disable Plotly toolbar
+};
 
-         Plotly.newPlot('vix-chart', traces, layout);
+         //Plotly.newPlot('vix-chart', traces, layout);
+         Plotly.newPlot('vix-chart', traces, layout, { displayModeBar: false });
        };
 
        document.addEventListener('DOMContentLoaded', function () {
